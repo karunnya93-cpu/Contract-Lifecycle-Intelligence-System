@@ -1,0 +1,15 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Negotiation | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}Negotiation support{% endblock %}
+{% block page_title %}AI Negotiation Suggestions{% endblock %}
+
+{% block module_content %}
+<section class="page-panel">
+    <div class="panel-heading"><div><h2>Suggested Improvements</h2><p>AI-generated negotiation opportunities from the latest contract.</p></div><i class="bi bi-lightbulb"></i></div>
+    <div class="suggestion-list">
+        {% for suggestion in suggestions %}<article><i class="bi bi-stars"></i><div><strong>{{ suggestion.suggestion }}</strong><p>{{ suggestion.reason }}</p></div></article>
+        {% else %}<p class="mb-0 text-muted">No negotiation suggestions are available for the latest contract.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Timeline | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}Obligation tracking{% endblock %}
+{% block page_title %}Obligation Timeline{% endblock %}
+
+{% block module_content %}
+<section class="page-panel">
+    <div class="panel-heading"><div><h2>Contract Milestones</h2><p>AI-extracted dates, notices, renewals, and obligations.</p></div><i class="bi bi-calendar-event"></i></div>
+    <div class="timeline-list">
+        {% for milestone in milestones %}<article><span></span><div><strong>{{ milestone.title }}</strong><p>{{ milestone.date }}</p></div></article>
+        {% else %}<p class="mb-0 text-muted">No milestones are available for the latest contract.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

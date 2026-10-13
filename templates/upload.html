@@ -1,0 +1,30 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Upload Contract | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}Document intake{% endblock %}
+{% block page_title %}Contract Upload{% endblock %}
+
+{% block module_content %}
+<section class="page-panel">
+    <div class="panel-heading">
+        <div>
+            <h2>Upload Contract</h2>
+            <p>Store a contract securely for extraction, review, and AI analysis.</p>
+        </div>
+        <i class="bi bi-file-earmark-text"></i>
+    </div>
+
+    <form class="upload-form" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label class="dropzone" for="contract_file">
+            <i class="bi bi-cloud-arrow-up"></i>
+            <span>Choose a PDF or DOCX contract</span>
+            <small>Maximum configured upload size: 25 MB</small>
+            <input id="contract_file" name="contract_file" type="file" accept="application/pdf,.pdf,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+        </label>
+        <button class="btn btn-primary btn-lg" type="submit">
+            <i class="bi bi-upload me-2"></i>Upload Contract
+        </button>
+    </form>
+</section>
+{% endblock %}

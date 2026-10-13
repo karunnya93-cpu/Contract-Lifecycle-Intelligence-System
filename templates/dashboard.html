@@ -1,0 +1,61 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Dashboard | AI Contract Intelligence{% endblock %}
+{% block page_title %}Welcome, {{ current_user.full_name }}{% endblock %}
+
+{% block module_content %}
+<section class="row g-4 mb-4">
+    <div class="col-md-6 col-xl-3">
+        <article class="dashboard-card">
+            <i class="bi bi-files card-icon"></i>
+            <p>Contracts</p>
+            <h2>{{ stats.contracts }}</h2>
+        </article>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <article class="dashboard-card">
+            <i class="bi bi-shield-exclamation card-icon"></i>
+            <p>Open Risks</p>
+            <h2>{{ stats.open_risks }}</h2>
+        </article>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <article class="dashboard-card">
+            <i class="bi bi-clock-history card-icon"></i>
+            <p>Deadlines</p>
+            <h2>{{ stats.deadlines }}</h2>
+        </article>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <article class="dashboard-card">
+            <i class="bi bi-check-circle card-icon"></i>
+            <p>Compliance</p>
+            <h2>{{ stats.compliance }}</h2>
+        </article>
+    </div>
+</section>
+
+<section class="module-grid">
+    <a href="{{ url_for('modules.upload') }}">
+        <article>
+            <i class="bi bi-cloud-arrow-up"></i>
+            <h3>Contract Upload</h3>
+            <p>Upload PDF contracts and prepare them for AI extraction.</p>
+        </article>
+    </a>
+    <a href="{{ url_for('modules.summary') }}">
+        <article>
+            <i class="bi bi-stars"></i>
+            <h3>AI Analysis</h3>
+            <p>Review summary, clause extraction readiness, and risk outputs.</p>
+        </article>
+    </a>
+    <a href="{{ url_for('modules.chatbot') }}">
+        <article>
+            <i class="bi bi-chat-square-text"></i>
+            <h3>Contract Q&A</h3>
+            <p>Ask questions against uploaded contract context.</p>
+        </article>
+    </a>
+</section>
+{% endblock %}

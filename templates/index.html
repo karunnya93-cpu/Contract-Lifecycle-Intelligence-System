@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}AI Contract Intelligence{% endblock %}
+
+{% block body %}
+<main class="landing-shell">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="{{ url_for('index') }}">
+                <i class="bi bi-shield-check me-2"></i>Contract Intelligence
+            </a>
+            <div class="d-flex gap-2">
+                <a class="btn btn-outline-primary" href="{{ url_for('auth.login') }}">Login</a>
+                <a class="btn btn-primary" href="{{ url_for('auth.register') }}">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="landing-hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <span class="badge text-bg-primary-subtle text-primary border border-primary-subtle mb-3">
+                        Enterprise Legal AI Platform
+                    </span>
+                    <h1 class="display-5 fw-bold mb-3">AI-Based Contract Intelligence System</h1>
+                    <p class="lead text-secondary mb-4">
+                        Securely analyze contracts, detect risk, track obligations, check compliance,
+                        and ask context-aware questions against uploaded agreements.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a class="btn btn-primary btn-lg" href="{{ url_for('auth.register') }}">
+                            Start Securely
+                        </a>
+                        <a class="btn btn-outline-primary btn-lg" href="{{ url_for('auth.login') }}">
+                            Sign In
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-panel shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <p class="text-secondary small mb-1">Contract Risk</p>
+                                <h2 class="h4 mb-0">Executive Overview</h2>
+                            </div>
+                            <span class="status-pill">Protected</span>
+                        </div>
+                        <div class="metric-row">
+                            <span>Authentication</span>
+                            <strong>Ready</strong>
+                        </div>
+                        <div class="metric-row">
+                            <span>Upload Pipeline</span>
+                            <strong>Next</strong>
+                        </div>
+                        <div class="metric-row">
+                            <span>RAG Chatbot</span>
+                            <strong>Planned</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

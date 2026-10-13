@@ -1,0 +1,28 @@
+{% extends "app_shell.html" %}
+
+{% block title %}AI Chat | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}RAG question answering{% endblock %}
+{% block page_title %}AI Contract Chatbot{% endblock %}
+
+{% block module_content %}
+<section class="page-panel chat-shell">
+    <div class="panel-heading">
+        <div>
+            <h2>Ask About a Contract</h2>
+            <p>Module 6 will connect this interface to FAISS retrieval and Gemini responses.</p>
+        </div>
+        <i class="bi bi-chat-dots"></i>
+    </div>
+    <form method="post" class="chat-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <textarea class="form-control" name="question" rows="4" placeholder="Ask about obligations, risks, payment terms, termination, or compliance...">{{ question }}</textarea>
+        <button class="btn btn-primary" type="submit"><i class="bi bi-send me-2"></i>Send</button>
+    </form>
+    {% if answer %}
+        <div class="chat-answer">
+            <div class="chat-answer-label">AI Response</div>
+            <div class="chat-answer-content">{{ answer_html }}</div>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

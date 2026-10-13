@@ -1,0 +1,928 @@
+2026-06-28 18:09:34,469 INFO [app] app:77 - AI-Based Contract Intelligence System started
+2026-06-28 18:09:35,319 INFO [app] app:77 - AI-Based Contract Intelligence System started
+2026-06-28 18:17:06,075 INFO [app] app:77 - AI-Based Contract Intelligence System started
+2026-06-28 18:17:07,011 INFO [app] app:77 - AI-Based Contract Intelligence System started
+2026-06-28 18:47:04,032 INFO [app] app:74 - AI-Based Contract Intelligence System started
+2026-06-28 18:47:04,707 INFO [app] app:74 - AI-Based Contract Intelligence System started
+2026-06-28 18:53:27,857 INFO [app] app:74 - AI-Based Contract Intelligence System started
+2026-06-28 18:53:57,238 INFO [app] app:75 - AI-Based Contract Intelligence System started
+2026-06-28 19:05:01,862 INFO [app] app:75 - AI-Based Contract Intelligence System started
+2026-06-28 19:05:02,583 INFO [app] app:75 - AI-Based Contract Intelligence System started
+2026-06-28 19:05:39,319 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_1_20260628133534773434_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Desktop\contract lifecycle\services\gemini_contract_service.py", line 39, in analyze_contract
+    raise GeminiAnalysisError("GEMINI_API_KEY is not configured.")
+services.gemini_contract_service.GeminiAnalysisError: GEMINI_API_KEY is not configured.
+2026-07-11 11:21:21,730 INFO [app] app:75 - AI-Based Contract Intelligence System started
+2026-07-11 11:21:22,555 INFO [app] app:75 - AI-Based Contract Intelligence System started
+2026-07-11 11:27:45,611 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_2_20260711055743146089_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 39, in analyze_contract
+    raise GeminiAnalysisError("GEMINI_API_KEY is not configured.")
+services.gemini_contract_service.GeminiAnalysisError: GEMINI_API_KEY is not configured.
+2026-07-11 11:38:52,706 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:38:53,897 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:39:42,095 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:39:42,957 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:41:07,321 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:41:07,953 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:41:44,526 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_2_20260711061138539828_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\grpc\_channel.py", line 1159, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 52, in analyze_contract
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 827, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-11 11:43:48,201 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:45:37,119 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:45:53,735 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:45:54,380 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:46:54,296 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:46:55,070 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-11 11:47:37,780 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_2_20260711061733955498_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 52, in analyze_contract
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1059, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\errors.py", line 105, in raise_for_response
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+2026-07-11 11:47:38,063 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_2_20260711061730381088_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 52, in analyze_contract
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1059, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\errors.py", line 105, in raise_for_response
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+2026-07-29 21:19:35,829 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:19:36,717 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:31:50,321 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_3_20260729160142668793_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 52, in analyze_contract
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1059, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\errors.py", line 105, in raise_for_response
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+2026-07-29 21:31:50,490 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_3_20260729160146640150_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 52, in analyze_contract
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1059, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\errors.py", line 105, in raise_for_response
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+2026-07-29 21:39:01,231 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:39:01,347 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:39:01,347 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:43:05,508 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:43:06,263 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 21:44:00,674 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_2_20260729161344102384_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 52, in analyze_contract
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1059, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\errors.py", line 107, in raise_for_response
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-07-29 22:00:15,500 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 22:00:16,394 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 22:01:23,152 ERROR [app] contract_analysis_service:50 - Contract analysis failed for user_2_20260729163051711388_SampleContract-Shuttle.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 106, in _parse_json
+    payload = json.loads(cleaned)
+              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 341, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 13 column 1 (char 1090)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 35, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 60, in analyze_contract
+    payload = GeminiContractAnalyzer._parse_json(response.text or "")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 108, in _parse_json
+    raise GeminiAnalysisError("Gemini returned an invalid JSON response.") from exc
+services.gemini_contract_service.GeminiAnalysisError: Gemini returned an invalid JSON response.
+2026-07-29 22:14:02,931 INFO [app] app:81 - AI-Based Contract Intelligence System started
+2026-07-29 22:14:28,202 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:15:57,543 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:18:33,480 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:19:17,831 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:20:19,344 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:56:09,481 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:56:32,610 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 22:57:01,083 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 23:03:14,881 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-07-29 23:03:36,550 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 13:50:34,096 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 13:50:35,514 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 19:36:12,522 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 19:36:13,210 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 19:48:22,633 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 19:48:23,237 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 21:21:48,634 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 21:24:36,618 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 21:24:47,352 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 21:25:09,488 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 21:26:16,406 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 21:26:16,951 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:00:29,175 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:00:29,637 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:07:40,770 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:15:27,636 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:15:28,335 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:16:10,888 ERROR [app] contract_analysis_service:58 - Contract analysis failed for user_4_20260906164601302315_Fictional_Business_Service_Agreement.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 37, in create_and_analyze
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 71, in analyze_contract
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1059, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\errors.py", line 107, in raise_for_response
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-09-06 22:20:35,936 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:20:57,687 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:21:20,333 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:22:16,470 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:22:46,714 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 1/3 in 2 seconds.
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 2/3 in 4 seconds.
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 3/3 in 8 seconds.
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 1/3 in 2 seconds.
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 2/3 in 4 seconds.
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 3/3 in 8 seconds.
+2026-09-06 22:22:47,441 WARNING [app] gemini_contract_service:233 - Gemini request remained unavailable after 3 retries (status 503).
+2026-09-06 22:22:47,581 ERROR [app] contract_analysis_service:75 - Contract analysis failed for sample.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 54, in _analyze_contract
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<stdin>", line 61, in <lambda>
+  File "<stdin>", line 61, in <genexpr>
+services.gemini_contract_service.GeminiTemporarilyUnavailableError: AI analysis is temporarily unavailable because the Gemini service is experiencing high demand. Please try again in a few moments.
+2026-09-06 22:22:47,699 ERROR [app] contract_analysis_service:75 - Contract analysis failed for sample.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\document_service.py", line 60, in _extract_with_pdfplumber
+    with pdfplumber.open(file_path) as pdf:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\pdfplumber\pdf.py", line 92, in open
+    stream = open(path_or_fp, "rb")
+             ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Karunnya.B\\AppData\\Local\\Temp\\tmpwmbh0ddu\\sample.pdf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 53, in _analyze_contract
+    contract.extracted_text = DocumentTextExtractor.extract_text(file_path)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\document_service.py", line 15, in extract_text
+    return DocumentTextExtractor.extract_pdf_text(file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\document_service.py", line 22, in extract_pdf_text
+    text = DocumentTextExtractor._extract_with_pdfplumber(file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\document_service.py", line 64, in _extract_with_pdfplumber
+    raise DocumentExtractionError(f"PDF text extraction failed: {exc}") from exc
+services.document_service.DocumentExtractionError: PDF text extraction failed: [Errno 2] No such file or directory: 'C:\\Users\\Karunnya.B\\AppData\\Local\\Temp\\tmpwmbh0ddu\\sample.pdf'
+2026-09-06 22:23:27,078 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:23:54,015 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:23:54,615 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 1/3 in 2 seconds.
+2026-09-06 22:23:54,615 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 2/3 in 4 seconds.
+2026-09-06 22:23:54,615 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 3/3 in 8 seconds.
+2026-09-06 22:23:54,615 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 1/3 in 2 seconds.
+2026-09-06 22:23:54,617 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 2/3 in 4 seconds.
+2026-09-06 22:23:54,617 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 3/3 in 8 seconds.
+2026-09-06 22:23:54,617 WARNING [app] gemini_contract_service:233 - Gemini request remained unavailable after 3 retries (status 503).
+2026-09-06 22:23:54,748 ERROR [app] contract_analysis_service:76 - Contract analysis failed for sample.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 55, in _analyze_contract
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<stdin>", line 52, in <lambda>
+  File "<stdin>", line 52, in <genexpr>
+services.gemini_contract_service.GeminiTemporarilyUnavailableError: AI analysis is temporarily unavailable because the Gemini service is experiencing high demand. Please try again in a few moments.
+2026-09-06 22:24:12,882 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:25:07,331 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:25:08,048 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-06 22:27:32,351 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-08 20:52:32,857 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-08 20:52:36,646 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-09 21:14:00,511 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-09 21:14:01,594 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-09 21:32:52,517 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-09 21:32:53,842 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-14 16:06:07,444 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-14 16:06:08,572 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-14 16:17:59,212 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-14 16:17:59,878 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-14 16:20:13,659 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-14 16:20:14,408 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-15 09:40:17,367 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-15 09:40:18,901 INFO [app] app:82 - AI-Based Contract Intelligence System started
+2026-09-15 16:05:31,046 ERROR [app] contract_analysis_service:76 - Contract analysis failed for user_2_20260915103521858268_Fictional_Business_Service_Agreement.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 213, in _generate_content_with_retry
+    return client.models.generate_content(**request_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1052, in _request_once
+    response = self._httpx_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 55, in _analyze_contract
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 81, in analyze_contract
+    response = GeminiContractAnalyzer._generate_content_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 216, in _generate_content_with_retry
+    raise GeminiAnalysisError(
+services.gemini_contract_service.GeminiAnalysisError: Gemini could not complete this request. Please try again later.
+2026-09-15 16:06:31,755 ERROR [app] contract_analysis_service:76 - Contract analysis failed for user_2_20260915103521858268_Fictional_Business_Service_Agreement.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 213, in _generate_content_with_retry
+    return client.models.generate_content(**request_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1052, in _request_once
+    response = self._httpx_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 55, in _analyze_contract
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 81, in analyze_contract
+    response = GeminiContractAnalyzer._generate_content_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 216, in _generate_content_with_retry
+    raise GeminiAnalysisError(
+services.gemini_contract_service.GeminiAnalysisError: Gemini could not complete this request. Please try again later.
+2026-09-15 16:07:44,550 ERROR [app] contract_analysis_service:76 - Contract analysis failed for user_2_20260915103521858268_Fictional_Business_Service_Agreement.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 213, in _generate_content_with_retry
+    return client.models.generate_content(**request_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1052, in _request_once
+    response = self._httpx_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 55, in _analyze_contract
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 81, in analyze_contract
+    response = GeminiContractAnalyzer._generate_content_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 216, in _generate_content_with_retry
+    raise GeminiAnalysisError(
+services.gemini_contract_service.GeminiAnalysisError: Gemini could not complete this request. Please try again later.
+2026-09-15 16:08:49,784 ERROR [app] contract_analysis_service:76 - Contract analysis failed for user_2_20260915103846236306_Fictional_Business_Service_Agreement.pdf
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 213, in _generate_content_with_retry
+    return client.models.generate_content(**request_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 6112, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\models.py", line 4933, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1262, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1082, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\google\genai\_api_client.py", line 1052, in _request_once
+    response = self._httpx_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\contract_analysis_service.py", line 55, in _analyze_contract
+    analysis = GeminiContractAnalyzer.analyze_contract(contract.extracted_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 81, in analyze_contract
+    response = GeminiContractAnalyzer._generate_content_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karunnya.B\OneDrive\Documents\Desktop\contract lifecycle\services\gemini_contract_service.py", line 216, in _generate_content_with_retry
+    raise GeminiAnalysisError(
+services.gemini_contract_service.GeminiAnalysisError: Gemini could not complete this request. Please try again later.
+2026-09-15 16:09:23,222 WARNING [app] gemini_contract_service:220 - Gemini request failed with 503. Retrying 1/3 in 2 seconds.

@@ -1,0 +1,15 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Compliance | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}Clause validation{% endblock %}
+{% block page_title %}Compliance Checker{% endblock %}
+
+{% block module_content %}
+<section class="page-panel">
+    <div class="panel-heading"><div><h2>Mandatory Clause Checklist</h2><p>AI-generated clause review for the latest uploaded contract.</p></div><span class="score-badge">{{ compliance_percentage ~ '%' if compliance_percentage is not none else '—' }}</span></div>
+    <div class="checklist">
+        {% for item in checklist %}<div><i class="bi bi-check2-square"></i><span>{{ item.clause }}</span><strong><span class="badge {% if item.status == 'Present' %}text-bg-success{% elif item.status == 'Missing' %}text-bg-danger{% else %}text-bg-warning{% endif %}">{{ item.status }}</span></strong></div>
+        {% else %}<p class="mb-0 text-muted">No compliance analysis is available for the latest contract.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

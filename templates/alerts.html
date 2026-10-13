@@ -1,0 +1,15 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Alerts | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}Red flags{% endblock %}
+{% block page_title %}Alerts{% endblock %}
+
+{% block module_content %}
+<section class="page-panel">
+    <div class="panel-heading"><div><h2>Red Flag Detection</h2><p>AI-generated alerts from the latest uploaded contract.</p></div><i class="bi bi-bell"></i></div>
+    <div class="alert-list">
+        {% for item in alerts_data %}<div><i class="bi bi-exclamation-circle"></i><span><strong>{{ item.title }}</strong><br>{{ item.message }}</span><span class="badge text-bg-danger ms-auto">Alert</span></div>
+        {% else %}<p class="mb-0 text-muted">No alerts are available for the latest contract.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

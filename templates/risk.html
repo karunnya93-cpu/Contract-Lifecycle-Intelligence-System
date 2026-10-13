@@ -1,0 +1,20 @@
+{% extends "app_shell.html" %}
+
+{% block title %}Risk Score | AI Contract Intelligence{% endblock %}
+{% block eyebrow %}Risk intelligence{% endblock %}
+{% block page_title %}Risk Score{% endblock %}
+
+{% block module_content %}
+<section class="page-panel">
+    <div class="panel-heading">
+        <div><h2>Risk Review</h2><p>AI-generated risks from the latest uploaded contract.</p></div>
+        <span class="score-badge">{{ contract.risk_score if contract and contract.analysis_status == "completed" else "—" }}</span>
+    </div>
+    {% if risks %}
+    <div class="table-responsive"><table class="table align-middle data-table">
+        <thead><tr><th>Risk</th><th>Severity</th><th>Description</th></tr></thead>
+        <tbody>{% for risk in risks %}<tr><td>{{ risk.title }}</td><td><span class="badge {% if risk.severity == 'High' %}text-bg-danger{% elif risk.severity == 'Medium' %}text-bg-warning{% else %}text-bg-success{% endif %}">{{ risk.severity }}</span></td><td>{{ risk.description }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+    {% else %}<p class="mb-0 text-muted">No risk analysis is available for the latest contract.</p>{% endif %}
+</section>
+{% endblock %}

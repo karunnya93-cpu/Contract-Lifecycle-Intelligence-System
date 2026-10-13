@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="app-layout">
+    <aside class="sidebar">
+        <a class="sidebar-brand" href="{{ url_for('modules.dashboard') }}">
+            <i class="bi bi-shield-check"></i>
+            <span>Contract AI</span>
+        </a>
+        <nav class="sidebar-nav">
+            <a class="{{ 'active' if request.endpoint == 'modules.dashboard' else '' }}" href="{{ url_for('modules.dashboard') }}"><i class="bi bi-grid-1x2"></i>Dashboard</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.upload' else '' }}" href="{{ url_for('modules.upload') }}"><i class="bi bi-cloud-arrow-up"></i>Upload</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.summary' else '' }}" href="{{ url_for('modules.summary') }}"><i class="bi bi-file-earmark-text"></i>Summary</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.risk' else '' }}" href="{{ url_for('modules.risk') }}"><i class="bi bi-exclamation-triangle"></i>Risk</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.alerts' else '' }}" href="{{ url_for('modules.alerts') }}"><i class="bi bi-bell"></i>Alerts</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.timeline' else '' }}" href="{{ url_for('modules.timeline') }}"><i class="bi bi-calendar-event"></i>Timeline</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.compliance' else '' }}" href="{{ url_for('modules.compliance') }}"><i class="bi bi-check2-square"></i>Compliance</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.negotiation' else '' }}" href="{{ url_for('modules.negotiation') }}"><i class="bi bi-lightbulb"></i>Negotiation</a>
+            <a class="{{ 'active' if request.endpoint == 'modules.chatbot' else '' }}" href="{{ url_for('modules.chatbot') }}"><i class="bi bi-chat-dots"></i>AI Chat</a>
+        </nav>
+        <a class="sidebar-logout" href="{{ url_for('auth.logout') }}">
+            <i class="bi bi-box-arrow-left"></i>Logout
+        </a>
+    </aside>
+
+    <main class="content-area">
+        <header class="dashboard-header">
+            <div>
+                <p class="text-primary fw-semibold mb-1">{% block eyebrow %}Secure workspace{% endblock %}</p>
+                <h1 class="h3 fw-bold mb-0">{% block page_title %}Dashboard{% endblock %}</h1>
+            </div>
+            <div class="user-chip">
+                <i class="bi bi-person-circle"></i>
+                <span>{{ current_user.email }}</span>
+            </div>
+        </header>
+
+        {% include "_flash.html" %}
+        {% block module_content %}{% endblock %}
+    </main>
+</div>
+{% endblock %}
